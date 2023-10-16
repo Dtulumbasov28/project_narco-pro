@@ -1,0 +1,40 @@
+// Заголовки, общие БЄМ блоки и проче...
+a[href^="tel"],
+button,
+.header__elem-taxi {
+  white-space: nowrap;
+}
+button:not([class]) {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 15px 30px;
+  border-radius: 30px 3px 30px 3px;
+}
+.button {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 15px 30px;
+  border-radius: 30px 3px 30px 3px;
+  // .button_theme_gradient
+
+  &_theme_gradient {
+    color: #fff;
+    background: (
+      linear-gradient(255deg, #cc675b 27.22%, #cc675b 27.22%, #2c6890 76.12%)
+    );
+  }
+  &_theme_red {
+    color: #fff;
+    background: $secondaryOneColor;
+  }
+  &_theme_outline {
+    color: $secondaryTwoColor;
+    border: 1px solid $secondaryTwoColor;
+  }
+}
+.blue {
+  color: $secondaryTwoColor;
+}
+.red {
+  color: $secondaryOneColor;
+}

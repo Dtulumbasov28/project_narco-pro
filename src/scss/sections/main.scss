@@ -1,0 +1,287 @@
+.main {
+  padding: 20px 0 0 0;
+
+  // .main__container
+
+  &__container {
+    position: relative;
+
+    &::before {
+      content: "";
+      background: url("@img/main_background.jpg") center center no-repeat;
+      display: block;
+      width: 780px;
+      height: 865px;
+      border-radius: 400px 5px;
+      position: absolute;
+      right: 140px;
+      top: 20px;
+      z-index: -1;
+    }
+  }
+
+  // .main__body
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .main__top
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 0 0 70px 0;
+  }
+
+  // .main__top-left
+
+  &__top-left {
+  }
+
+  // .main__title
+
+  &__title {
+    font-family: Oswald;
+    font-size: 50px;
+    line-height: 1;
+    max-width: 700px;
+    margin: 30px 0 30px 0;
+
+    & span {
+      color: $secondaryTwoColor;
+    }
+  }
+
+  // .main__promo
+
+  &__promo {
+    font-family: Oswald;
+    text-transform: uppercase;
+  }
+
+  // .main__promo-day
+
+  &__promo-day {
+    position: relative;
+    font-size: 22px;
+    padding: 30px 0 0 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 100px;
+      background: $secondaryOneColor;
+    }
+  }
+
+  // .main__promo-price
+
+  &__promo-price {
+    font-size: 50px;
+    line-height: 1;
+    color: $secondaryOneColor;
+    margin: 0 0 30px 0;
+
+    & span {
+      font-size: 25px;
+      color: $secondaryThreeColor;
+    }
+  }
+
+  // .main__promo-button
+
+  &__promo-button {
+  }
+
+  // .main__top-right
+
+  &__top-right {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 310px;
+    border-radius: 100px 5px;
+    background: rgba(240, 242, 244, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 40px 20px;
+  }
+
+  // .main__form
+
+  &__form {
+    width: max-content;
+    border-radius: 120px 5px;
+    background: rgba(240, 242, 244, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 40px 50px 40px 60px;
+    margin: 0 0 70px 0;
+  }
+
+  // .main__form-wrapper
+
+  &__form-wrapper {
+  }
+
+  // .main__cards
+
+  &__cards {
+    display: flex;
+    margin: -10px;
+  }
+
+  // .main__card
+
+  &__card {
+  }
+
+  // .main__card-heading
+
+  &__card-heading {
+  }
+
+  // .main__card-price
+
+  &__card-price {
+  }
+}
+.main-form {
+  // .main-form__title
+
+  &__title {
+    font-family: Oswald;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+
+    & span {
+      color: $secondaryTwoColor;
+    }
+  }
+
+  // .main-form__body
+
+  &__body {
+    display: flex;
+    align-items: center;
+    margin: -5px;
+  }
+
+  // .main-form__input
+
+  &__input {
+    font-size: 14px;
+    color: $secondaryThreeColor;
+    border-radius: 30px 3px;
+    padding: 20px 30px;
+    margin: 5px;
+  }
+
+  // .main-form__input-name
+
+  &__input-name {
+  }
+
+  // .main-form__input-tel
+
+  &__input-tel {
+  }
+
+  // .main-form__submit
+
+  &__submit {
+    cursor: pointer;
+    padding: 20px 30px;
+    margin: 5px;
+  }
+
+  // .main-form__button
+
+  &__button {
+    padding: 20px 30px;
+    margin: 5px;
+  }
+
+  // .main-form__desc
+
+  &__desc {
+    font-size: 15px;
+    margin: 20px 0 0 0;
+  }
+}
+.button {
+  // .button_theme
+
+  &_theme {
+  }
+
+  // .button_theme
+
+  &_theme {
+  }
+}
+.main-card {
+  margin: 10px;
+  &:nth-child(1) {
+    & .main-card__img {
+      border-radius: 150px 10px 10px 10px;
+    }
+  }
+  &:nth-child(2) {
+    & .main-card__img {
+      border-radius: 10px;
+    }
+  }
+  &:nth-child(3) {
+    & .main-card__img {
+      border-radius: 10px 10px 150px 10px;
+    }
+  }
+  // .main-card__img
+
+  &__img {
+    overflow: hidden;
+  }
+
+  // .main-card__text
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0 0 0;
+  }
+
+  // .main-card__text-desc
+
+  &__text-desc {
+  }
+  // .main-card__heading
+
+  &__heading {
+    font-weight: 500;
+  }
+  // .main-card__price
+
+  &__price {
+    font-family: Oswald;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: $secondaryOneColor;
+    & span {
+      font-size: 20px;
+      color: $secondaryThreeColor;
+    }
+  }
+
+  // .main-card__text-button
+
+  &__text-button {
+  }
+}
