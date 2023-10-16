@@ -11,6 +11,8 @@ button:not([class]) {
   border-radius: 30px 3px 30px 3px;
 }
 .button {
+  display: flex;
+  width: max-content;
   font-size: 14px;
   font-weight: 500;
   padding: 15px 30px;
