@@ -1,4 +1,14 @@
 // Заголовки, общие БЄМ блоки и проче...
+section {
+  padding: 50px 0;
+}
+.title {
+  font-family: Oswald;
+  font-size: 36px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
 a[href^="tel"],
 button,
 .header__elem-taxi {
@@ -39,4 +49,27 @@ button:not([class]) {
 }
 .red {
   color: $secondaryOneColor;
+}
+main p:not([class]) {
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+li:not([class]) {
+  position: relative;
+  line-height: 1.85;
+  padding-left: 16px;
+  margin-bottom: 10px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #000;
+  }
+  // list-style: disc;
+  // margin: 0 0 10px 1.3rem;
 }

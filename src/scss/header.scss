@@ -41,6 +41,7 @@
     display: grid;
     grid-template-columns: repeat(6, auto);
     align-items: center;
+    justify-content: space-between;
     border-top: 1px solid #e1e2e3;
     padding: 20px 0 12px 0;
 
@@ -79,6 +80,10 @@
     color: $secondaryThreeColor;
     white-space: nowrap;
     margin: 0 auto 0 0;
+
+    @media (max-width: $notebook) {
+      margin: 0 auto;
+    }
   }
 
   // .header__elem-one
@@ -88,6 +93,10 @@
     font-size: 13px;
     white-space: nowrap;
     margin: 0 10px 0 50px;
+
+    @media (max-width: $notebook) {
+      margin: 0 0 0 auto;
+    }
   }
 
   // .header__elem-visit
@@ -155,7 +164,7 @@
 
     @media (max-width: $notebook) {
       align-items: flex-start;
-      margin: unset;
+      margin: 0 auto;
     }
   }
 
@@ -199,6 +208,9 @@
   // .header__chat
 
   &__chat {
+    @media (max-width: $notebook) {
+      margin: 0 0 0 auto;
+    }
   }
 }
 
@@ -285,4 +297,54 @@
   &__submenu-link {
     padding: 10px;
   }
+}
+
+//Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: $tablet) {
+		display: block;
+		position: relative;
+		width: rem(25);
+		height: rem(20);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(3);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1.5));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
 }
