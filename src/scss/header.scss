@@ -39,7 +39,7 @@
 
   &__body {
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(7, auto);
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid #e1e2e3;
@@ -48,6 +48,15 @@
     @media (max-width: $notebook) {
       grid-template-columns: repeat(3, 1fr);
       grid-row-gap: 20px;
+    }
+  }
+
+  // .header__menu
+
+  &__menu {
+    @media (min-width: $tablet) {
+
+      display: none;
     }
   }
 
@@ -297,54 +306,60 @@
   &__submenu-link {
     padding: 10px;
   }
+
+  // .header-bottom__submenu-link
+
+  &__submenu-link {
+    padding: 10px;
+  }
 }
 
 //Burger
 
 .icon-menu {
-	display: none;
-	@media (max-width: $tablet) {
-		display: block;
-		position: relative;
-		width: rem(25);
-		height: rem(20);
-		cursor: pointer;
-		z-index: 5;
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: rem(3);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - rem(1.5));
-		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - rem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - rem(1));
-				transform: rotate(45deg);
-			}
-		}
-	}
+  display: none;
+  @media (max-width: $tablet) {
+    display: block;
+    position: relative;
+    width: rem(25);
+    height: rem(20);
+    cursor: pointer;
+    z-index: 5;
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(3);
+      background-color: #000;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - rem(1.5));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+      }
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
 }

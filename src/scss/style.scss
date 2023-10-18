@@ -92,7 +92,7 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-//   overflow: hidden;
+  //   overflow: hidden;
   // Прижимаем footer
   > main {
     flex: 1 1 auto;
@@ -173,3 +173,9 @@ body {
 @import "sections/price";
 @import "sections/staff";
 @import "sections/license";
+@import "sections/pay-attention";
+@import "sections/conditions";
+@import "sections/service-areas";
+@import "sections/faq";
+@import "sections/contacts";
+@import "sections/recommendations";

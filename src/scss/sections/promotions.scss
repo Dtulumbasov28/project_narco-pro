@@ -117,13 +117,14 @@
 
   &__button-prev {
     left: 0;
+    transform: translateY(50%);
   }
 
   // .swiper__button-next
 
   &__button-next {
     right: 0;
-    transform: rotate(180deg);
+    transform: translateY(50%) rotate(180deg);
   }
 }
 .swiper-wrapper {

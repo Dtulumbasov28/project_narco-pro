@@ -54,7 +54,10 @@ main p:not([class]) {
   line-height: 1.85;
   margin-bottom: 20px;
 }
-li:not([class]) {
+main ul:not([class]) {
+  margin-bottom: 20px;
+}
+main li:not([class]) {
   position: relative;
   line-height: 1.85;
   padding-left: 16px;
@@ -63,13 +66,11 @@ li:not([class]) {
   &::before {
     content: "";
     position: absolute;
-    top: 9px;
+    top: 12px;
     left: 0;
     width: 4px;
     height: 4px;
     border-radius: 50%;
     background-color: #000;
   }
-  // list-style: disc;
-  // margin: 0 0 10px 1.3rem;
 }
