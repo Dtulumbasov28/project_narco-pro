@@ -8,21 +8,44 @@
   // .our-clinic__top
 
   &__top {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
     padding-bottom: 80px;
+    justify-content: flex-start;
+
+    @media (max-width: $tablet) {
+      padding-bottom: unset;
+    }
   }
 
   // .our-clinic__top-photo
 
   &__top-photo {
-    width: 100%;
-    height: 100%;
-    max-width: 510px;
+    width: 510px;
     max-height: 640px;
-    margin: 0 50px 0 0;
+    //  margin: 0 50px 0 0;
     border-radius: 150px 10px;
     overflow: hidden;
+    grid-area: 1 / 1 / 3 / 2;
+
+    @media (max-width: $notebook) {
+      width: 350px;
+    }
+    @media (max-width: $tablet) {
+      width: 80%;
+      border-radius: 10px;
+      margin: 0 auto;
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
+      max-height: 600px;
+    }
+    @media (max-width: $mobileBig) {
+      width: 100%;
+      max-height: 420px;
+    }
 
     & img {
       width: 100%;
@@ -39,25 +62,67 @@
   // .our-clinic__title
 
   &__title {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    max-width: fit-content;
+    padding-bottom: 25px;
+    margin-left: 50px;
+    margin-bottom: unset;
+    grid-area: 1 / 2 / 2 / 4;
+
+    @media (max-width: $notebook) {
+      margin-left: 20px;
+    }
+
+    @media (max-width: $tablet) {
+      text-align: center;
+      max-width: unset;
+      margin-left: unset;
+      margin-bottom: 30px;
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    @media (max-width: $mobileBig) {
+      text-align-last: left;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 4px;
+      background: $secondaryOneColor;
+
+      @media (max-width: $tablet) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @media (max-width: $mobileBig) {
+			left: 0;
+			transform: unset;
+      }
+    }
   }
 
   // .our-clinic__desc
 
   &__desc {
-    position: relative;
+    width: max-content;
     line-height: 1.85;
-    max-width: 880px;
-    padding-top: 25px;
-    margin-top: 25px;
+    width: 100%;
+    max-width: fit-content;
+    margin: 25px 0 190px 50px;
+    grid-area: 2 / 2 / 3 / 4;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100px;
-      height: 4px;
-      background: $secondaryOneColor;
+    @media (max-width: $notebook) {
+      margin: 25px 0 190px 20px;
+    }
+    @media (max-width: $tablet) {
+      margin: 20px 0;
+      grid-area: 3 / 1 / 4 / 2;
     }
 
     & p:not(:last-child) {
@@ -71,13 +136,28 @@
     position: absolute;
     bottom: 0;
     right: 0;
+
+    @media (max-width: $tablet) {
+      position: unset;
+    }
   }
 
   // .our-clinic__bottom-list
 
   &__bottom-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
     margin: -12px;
+
+    @media (max-width: $tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobileBig) {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   // .our-clinic__bottom-item
@@ -88,6 +168,10 @@
 
     &:nth-child(1) {
       border-radius: 150px 10px 10px 10px;
+
+      @media (max-width: $tablet) {
+        border-radius: 10px;
+      }
     }
 
     &:nth-child(2) {
@@ -100,6 +184,10 @@
 
     &:nth-child(4) {
       border-radius: 10px 10px 150px 10px;
+
+      @media (max-width: $tablet) {
+        border-radius: 10px;
+      }
     }
 
     & img {

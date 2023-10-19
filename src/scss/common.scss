@@ -1,6 +1,10 @@
 // Заголовки, общие БЄМ блоки и проче...
 section {
   padding: 50px 0;
+
+  @media (max-width: $mobile) {
+    padding: 25px 0;
+  }
 }
 .title {
   font-family: Oswald;
@@ -9,8 +13,15 @@ section {
   text-transform: uppercase;
   margin-bottom: 30px;
 
+  @media (max-width: $tablet) {
+    font-size: 30px;
+  }
   @media (max-width: $mobile) {
     margin-bottom: 20px;
+  }
+  @media (max-width: $mobileBig) {
+    font-size: 24px;
+    line-height: 1.5;
   }
 }
 a[href^="tel"],

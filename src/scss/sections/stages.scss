@@ -5,21 +5,40 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
   }
 
   // .stages__title
 
   &__title {
     text-align: right;
-    width: 100%;
+    width: 40%;
     max-width: 610px;
     margin: 0 54px 0 0;
+    @media (max-width: $notebook) {
+      width: 30%;
+    }
+    @media (max-width: $tablet) {
+      width: 100%;
+      max-width: unset;
+      text-align: center;
+      margin: 0 0 30px 0;
+    }
   }
 
   // .stages__body
 
   &__body {
-    width: 100%;
+    width: 60%;
+    @media (max-width: $notebook) {
+      width: 70%;
+    }
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
   }
 
   // .stages__list
@@ -29,6 +48,11 @@
     justify-content: space-between;
 
     margin: 0 0 20px 0;
+
+    @media (max-width: $mobile) {
+      margin: 0 0 30px 0;
+      flex-direction: column;
+    }
   }
 
   // .stages__item
@@ -37,6 +61,12 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    @media (max-width: $mobile) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
   }
 
   // .stages__item-icon
@@ -53,19 +83,35 @@
     text-align: center;
     color: $secondaryThreeColor;
     max-width: 290px;
+
+    @media (max-width: $mobile) {
+      max-width: unset;
+    }
   }
 
   // .stages__buttons
 
   &__buttons {
     display: flex;
+    @media (max-width: $mobileBig) {
+      flex-direction: column;
+    }
   }
 
   // .stages__button
 
   &__button {
+    @media (max-width: $mobile) {
+      width: 100%;
+      justify-content: center;
+    }
+
     &:not(:last-child) {
       margin: 0 10px 0 0;
+
+      @media (max-width: $mobileBig) {
+        margin: 0 0 10px 0;
+      }
     }
   }
 }
