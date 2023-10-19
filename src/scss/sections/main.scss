@@ -17,6 +17,10 @@
       right: 140px;
       top: 20px;
       z-index: -1;
+
+      @media (max-width: $tablet) {
+        display: none;
+      }
     }
   }
 
@@ -34,6 +38,13 @@
     justify-content: space-between;
     align-items: start;
     margin: 0 0 70px 0;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 0 0 50px 0;
+    }
   }
 
   // .main__top-left
@@ -49,6 +60,25 @@
     line-height: 1;
     max-width: 700px;
     margin: 30px 0 30px 0;
+
+    @media (max-width: $notebook) {
+      font-size: 40px;
+      max-width: 600px;
+    }
+    @media (max-width: $tablet) {
+      font-size: 36px;
+      max-width: 600px;
+      margin: 0 0 30px 0;
+    }
+    @media (max-width: $mobileBig) {
+      font-size: 30px;
+      line-height: 1.55;
+      text-transform: uppercase;
+      margin: 0 0 20px 0;
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: 24px;
+    }
 
     & span {
       color: $secondaryTwoColor;
@@ -69,6 +99,10 @@
     font-size: 22px;
     padding: 30px 0 0 0;
 
+    @media (max-width: $mobileBig) {
+      padding: 20px 0 0 0;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -77,6 +111,11 @@
       height: 4px;
       width: 100px;
       background: $secondaryOneColor;
+
+      @media (max-width: $mobile) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 
@@ -88,15 +127,33 @@
     color: $secondaryOneColor;
     margin: 0 0 30px 0;
 
+    @media (max-width: $tablet) {
+      font-size: 40px;
+    }
+    @media (max-width: $mobileBig) {
+      font-size: 50px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 20px 0;
+    }
+
     & span {
       font-size: 25px;
       color: $secondaryThreeColor;
+
+      @media (max-width: $mobileBig) {
+        text-transform: lowercase;
+        margin-top: 12px;
+      }
     }
   }
 
   // .main__promo-button
 
   &__promo-button {
+    @media (max-width: $mobile) {
+      margin: 0 auto;
+    }
   }
 
   // .main__top-right
@@ -111,17 +168,41 @@
     background: rgba(240, 242, 244, 0.9);
     backdrop-filter: blur(10px);
     padding: 40px 20px;
+
+    @media (max-width: $mobile) {
+      margin: 20px 0 0 0;
+    }
   }
 
   // .main__form
 
   &__form {
-    width: max-content;
     border-radius: 120px 5px;
     background: rgba(240, 242, 244, 0.7);
     backdrop-filter: blur(10px);
     padding: 40px 50px 40px 60px;
     margin: 0 0 70px 0;
+
+    @media (max-width: $notebook) {
+      padding: 40px;
+    }
+    @media (max-width: $mobileBig) {
+      position: relative;
+      border-radius: unset;
+      background: unset;
+      padding: 20px 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -12px;
+        width: calc(100% + 24px);
+        height: 100%;
+        background: rgba(240, 242, 244, 0.7);
+        z-index: -1;
+      }
+    }
   }
 
   // .main__form-wrapper
@@ -134,6 +215,10 @@
   &__cards {
     display: flex;
     margin: -10px;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
   }
 
   // .main__card
@@ -160,6 +245,10 @@
     text-transform: uppercase;
     margin: 0 0 20px 0;
 
+    @media (max-width: $mobileBig) {
+      text-align: center;
+    }
+
     & span {
       color: $secondaryTwoColor;
     }
@@ -168,9 +257,19 @@
   // .main-form__body
 
   &__body {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: flex-start;
     margin: -5px;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, auto);
+      justify-content: unset;
+    }
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(1, auto);
+      justify-content: unset;
+    }
   }
 
   // .main-form__input
@@ -179,8 +278,17 @@
     font-size: 14px;
     color: $secondaryThreeColor;
     border-radius: 30px 3px;
+    border: 1px solid #e1e3e5;
+    background: #fff;
     padding: 20px 30px;
     margin: 5px;
+
+    outline: 0;
+    outline-offset: 0;
+
+    @media (max-width: $mobile) {
+      padding: 15px 30px;
+    }
   }
 
   // .main-form__input-name
@@ -199,6 +307,14 @@
     cursor: pointer;
     padding: 20px 30px;
     margin: 5px;
+
+    @media (max-width: $tablet) {
+      width: calc(100% - 10px);
+    }
+    @media (max-width: $mobile) {
+      padding: 15px 30px;
+      justify-content: center;
+    }
   }
 
   // .main-form__button
@@ -206,6 +322,14 @@
   &__button {
     padding: 20px 30px;
     margin: 5px;
+
+    @media (max-width: $tablet) {
+      width: calc(100% - 10px);
+    }
+    @media (max-width: $mobile) {
+      padding: 15px 30px;
+      justify-content: center;
+    }
   }
 
   // .main-form__desc
@@ -213,6 +337,10 @@
   &__desc {
     font-size: 15px;
     margin: 20px 0 0 0;
+
+    @media (max-width: $mobileBig) {
+      text-align: center;
+    }
   }
 }
 .button {
@@ -227,10 +355,16 @@
   }
 }
 .main-card {
+  display: flex;
+  flex-direction: column;
   margin: 10px;
   &:nth-child(1) {
     & .main-card__img {
       border-radius: 150px 10px 10px 10px;
+
+      @media (max-width: $tablet) {
+        border-radius: 10px;
+      }
     }
   }
   &:nth-child(2) {
@@ -241,12 +375,32 @@
   &:nth-child(3) {
     & .main-card__img {
       border-radius: 10px 10px 150px 10px;
+
+      @media (max-width: $tablet) {
+        border-radius: 10px;
+      }
     }
   }
   // .main-card__img
 
   &__img {
+    height: 100%;
+    max-height: 230px;
     overflow: hidden;
+
+    @media (max-width: $tablet) {
+      height: 170px;
+    }
+
+    @media (max-width: $mobile) {
+      height: 250px;
+      width: 80%;
+      margin: 0 auto;
+    }
+    @media (max-width: $mobileBig) {
+      width: 100%;
+      margin: unset;
+    }
 
     & img {
       width: 100%;
@@ -262,6 +416,11 @@
     align-items: center;
     justify-content: space-between;
     margin: 15px 0 0 0;
+
+    @media (max-width: $notebook) {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   // .main-card__text-desc
@@ -280,6 +439,10 @@
     font-size: 25px;
     text-transform: uppercase;
     color: $secondaryOneColor;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 10px;
+    }
     & span {
       font-size: 20px;
       color: $secondaryThreeColor;
@@ -289,5 +452,9 @@
   // .main-card__text-button
 
   &__text-button {
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+      justify-content: center;
+    }
   }
 }

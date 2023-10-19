@@ -26,6 +26,7 @@
   --secondary-one-color: #d0675a; // Цвет оранжевый
   --secondary-two-color: #246893; // Цвет синий
   --secondary-three-color: #808080; // Цвет серый
+  --button-hover-color: #f0f2f4; // Цвет серый
 }
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
@@ -37,6 +38,7 @@ $mainColor: var(--main-color); // Цвет шрифта по умолчанию
 $secondaryOneColor: var(--secondary-one-color); // Цвет оранжевый
 $secondaryTwoColor: var(--secondary-two-color); // Цвет синий
 $secondaryThreeColor: var(--secondary-three-color); // Цвет серый
+$buttonHoverColor: var(--button-hover-color); // Цвет кнопок hover
 
 // Настройки адаптивной сетки ===============================================================================================================================================================================================================================================================================================
 
@@ -49,6 +51,8 @@ $maxWidthContainer: 1584;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPadding: 60;
+$containerPaddingMobile: 40;
+$containerPaddingMobileSmall: 24;
 
 // Ширина срабатывания первого брейкпоинта
 $containerWidth: $maxWidthContainer + $containerPadding;
@@ -57,9 +61,10 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 $pc: em(
   $containerWidth
 ); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
-$notebook: em(1583.98); // Ноутбук
+$notebook: em(1439.98); // Ноутбук
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
+$mobileBig: em(574.98); // Телефоны M
 $mobileSmall: em(479.98); // Телефоны S
 
 // Тип адаптива:
@@ -120,6 +125,13 @@ body {
     }
     @if ($containerPadding>0) {
       padding: 0 rem(math.div($containerPadding, 2));
+
+      @media (max-width: $tablet) {
+        padding: 0 rem(math.div($containerPaddingMobile, 2));
+      }
+      @media (max-width: $mobile) {
+        padding: 0 rem(math.div($containerPaddingMobileSmall, 2));
+      }
     }
   }
 } @else {

@@ -8,6 +8,10 @@ section {
   line-height: 1.33;
   text-transform: uppercase;
   margin-bottom: 30px;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 20px;
+  }
 }
 a[href^="tel"],
 button,
@@ -42,6 +46,7 @@ button:not([class]) {
   &_theme_outline {
     color: $secondaryTwoColor;
     border: 1px solid $secondaryTwoColor;
+    background: #fff;
   }
 }
 .blue {

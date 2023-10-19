@@ -11,6 +11,10 @@
     align-items: flex-start;
     justify-content: space-between;
     margin: 0 0 38px 0;
+
+    @media (max-width: $mobile) {
+      margin: 0 0 20px 0;
+    }
   }
 
   // .video__title
@@ -21,12 +25,21 @@
     line-height: 1.66;
     text-transform: uppercase;
     max-width: 1180px;
+
+    @media (max-width: $mobileBig) {
+      font-size: 24px;
+    }
   }
 
   // .video__logo
 
   &__logo {
     max-width: 184px;
+    margin-left: 80px;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
   }
 
   // .video__body
@@ -35,6 +48,11 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   // .video__video
@@ -47,6 +65,22 @@
     border-radius: 150px 10px;
     overflow: hidden;
 
+    @media (max-width: $notebook) {
+      height: 500px;
+    }
+    @media (max-width: $tablet) {
+      height: 400px;
+      margin: 0 0 20px 0;
+    }
+    @media (max-width: $mobile) {
+      border-radius: 10px;
+      height: 300px;
+    }
+    @media (max-width: $mobileBig) {
+      height: 250px;
+      margin: 0 0 10px 0;
+    }
+
     & iframe {
       width: 100%;
       height: 100%;
@@ -57,6 +91,9 @@
 
   &__text {
     text-align: right;
+    @media (max-width: $tablet) {
+      text-align: left;
+    }
   }
 
   // .video__desc
@@ -66,18 +103,40 @@
     line-height: 1.66;
     max-width: 350px;
     margin: 0 0 30px 0;
+
+    @media (max-width: $tablet) {
+      max-width: 100%;
+    }
+    @media (max-width: $mobileBig) {
+      margin: 0 0 20px 0;
+    }
   }
 
   // .video__button-more
 
   &__button-more {
     margin: 0 0 16px auto;
+    @media (max-width: $tablet) {
+      margin: 0 auto 16px 0;
+    }
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+      justify-content: center;
+      margin: 0 auto 10px 0;
+    }
   }
 
   // .video__button-contact
 
   &__button-contact {
-    margin: 0 0 0 auto;
+    margin: 0 auto 0 0;
+    @media (max-width: $tablet) {
+      text-align: left;
+    }
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+      justify-content: center;
+    }
   }
 }
 .button {
