@@ -151,6 +151,8 @@
   // .main__promo-button
 
   &__promo-button {
+    background: #fff;
+
     @media (max-width: $mobile) {
       margin: 0 auto;
     }

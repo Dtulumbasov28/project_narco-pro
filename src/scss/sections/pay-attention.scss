@@ -15,6 +15,11 @@
     display: flex;
     justify-content: space-between;
     margin: 0 0 50px 0;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      margin: 0 0 30px 0;
+    }
   }
 
   // .pay-attention__title
@@ -23,6 +28,14 @@
     max-width: 510px;
     width: 100%;
     margin: 0 150px 0 0;
+
+    @media (max-width: $notebook) {
+      margin: 0 20px 0 0;
+    }
+    @media (max-width: $tablet) {
+      margin: 0 0 20px 0;
+      max-width: unset;
+    }
   }
 
   // .pay-attention__list
@@ -35,6 +48,10 @@
   &__bottom {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: $tablet) {
+      flex-direction: column-reverse;
+    }
   }
 
   // .pay-attention__quote
@@ -49,6 +66,17 @@
     margin: 0 150px 0 0;
     background-color: #f0f2f4;
     border-radius: 100px 10px;
+
+    @media (max-width: $notebook) {
+      margin: 0 20px 0 0;
+    }
+    @media (max-width: $tablet) {
+      margin: 30px auto 0 auto;
+    }
+    @media (max-width: $mobileBig) {
+      border-radius: 10px;
+      padding: 30px;
+    }
   }
 
   // .pay-attention__benefits
@@ -56,6 +84,11 @@
   &__benefits {
     display: flex;
     margin: -20px;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      margin: -20px 0;
+    }
   }
 
   // .pay-attention__benefit
@@ -66,6 +99,14 @@
     align-items: center;
     text-align: center;
     margin: 20px;
+    @media (max-width: $mobile) {
+      max-width: 80%;
+      margin: 20px auto;
+    }
+    @media (max-width: $mobileSmall) {
+      max-width: 90%;
+      margin: 20px auto;
+    }
   }
 
   // .pay-attention__benefit-img

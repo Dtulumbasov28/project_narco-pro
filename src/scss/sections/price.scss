@@ -54,6 +54,9 @@
   // .price-tabs__content
 
   &__content {
+    @media (max-width: $tablet) {
+      margin-top: 20px;
+    }
   }
 
   // .price-tabs__table
@@ -71,6 +74,10 @@
     grid-template-columns: repeat(8, 1fr);
     padding: 20px 50px;
     border-bottom: 2px solid #000;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
   }
 
   // .price-table__head-num
@@ -95,7 +102,8 @@
 
   &__head-order {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 20px;
     grid-area: 1 / 8 / 2 / 9;
   }
 
@@ -112,6 +120,10 @@
     padding: 15px 50px;
     background-color: #f0f2f4;
     border-bottom: 1px solid #e1e2e3;
+
+    @media (max-width: $mobile) {
+      padding: 15px 10px;
+    }
   }
 
   // .price-table__body-list
@@ -123,26 +135,51 @@
   // .price-table__body-item
 
   &__body-item {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-
-    border-bottom: 1px solid #e1e2e3;
-    padding: 20px 50px;
-
-    &::before {
-      font-weight: 600;
-      counter-increment: price;
-      content: counter(price);
-      margin-right: 100px;
-      grid-area: 1 / 1 / 2 / 2;
-    }
   }
 }
 .price-item {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+  border-bottom: 1px solid #e1e2e3;
+  padding: 20px 50px;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+  }
+  @media (max-width: $mobile) {
+    padding: 10px;
+  }
+
+  &::before {
+    font-weight: 600;
+    counter-increment: price;
+    content: counter(price);
+    margin-right: 100px;
+    grid-area: 1 / 1 / 2 / 2;
+
+    @media (max-width: $tablet) {
+      color: $secondaryTwoColor;
+      margin-right: unset;
+      margin-bottom: 15px;
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  }
   // .price-item__name
 
   &__name {
     grid-area: 1 / 2 / 2 / 7;
+
+    @media (max-width: $tablet) {
+      font-size: 20px;
+      margin-bottom: 20px;
+      grid-area: 2 / 1 / 3 / 3;
+    }
+
+    @media (max-width: $mobileBig) {
+      font-size: 16px;
+    }
   }
 
   // .price-item__price
@@ -150,6 +187,10 @@
   &__price {
     font-weight: 500;
     grid-area: 1 / 7 / 2 / 8;
+
+    @media (max-width: $tablet) {
+      grid-area: 3 / 1 / 4 / 2;
+    }
   }
 
   // .price-item__order
@@ -160,8 +201,14 @@
     text-align-last: left;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    margin-left: 20px;
     grid-area: 1 / 8 / 2 / 9;
+
+    @media (max-width: $tablet) {
+      justify-content: flex-end;
+      grid-area: 3 / 2 / 4 / 3;
+    }
 
     &:after {
       content: "";
@@ -177,6 +224,10 @@
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
+
   // .price-block__title
 
   &__title {
@@ -186,6 +237,11 @@
     text-align: right;
     line-height: 1.5;
     margin: 0 80px 0 auto;
+
+    @media (max-width: $mobile) {
+      margin: 0 0 20px 0;
+      text-align: center;
+    }
   }
 
   // .price-block__body
@@ -198,16 +254,37 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 240px);
-    align-items: center;
     justify-content: space-between;
     margin: -10px 20px -10px -10px;
+
+    @media (max-width: $notebook) {
+      margin: -10px;
+      grid-template-columns: repeat(4, 180px);
+    }
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 200px);
+    }
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      margin: unset;
+    }
+    @media (max-width: $mobileBig) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   // .price-block__item
 
   &__item {
     text-align: center;
-    margin: 10px;
+
+    @media (max-width: $mobile) {
+      margin: 15px;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
   }
 
   // .price-block__item-img
@@ -230,13 +307,28 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 30px;
+
+    @media (max-width: $mobile) {
+      justify-content: center;
+    }
+    @media (max-width: $mobileBig) {
+      flex-direction: column;
+    }
   }
 
   // .price-block__button
 
   &__button {
+    @media (max-width: $mobile) {
+      width: 100%;
+      justify-content: center;
+    }
     &:not(:last-child) {
       margin: 0 10px 0 0;
+
+      @media (max-width: $mobileBig) {
+        margin: 0 0 10px 0;
+      }
     }
   }
 }

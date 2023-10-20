@@ -26,12 +26,18 @@
   // .staff__body
 
   &__body {
+    position: relative;
     padding: 0 50px;
   }
 
   // .staff__slider
 
   &__slider {
+  }
+
+  // .staff__slider-wrapper
+
+  &__slider-wrapper {
   }
 }
 .title {
@@ -99,6 +105,9 @@
   // .staff-slider__button
 
   &__button {
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
     margin-top: auto;
   }
 }

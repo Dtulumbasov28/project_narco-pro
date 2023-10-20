@@ -9,17 +9,29 @@
   &__body {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
   }
 
   // .faq__left
 
   &__left {
     width: 100%;
+    margin: 0 50px 0 0;
+
+    @media (max-width: $tablet) {
+      margin: 0 0 20px 0;
+    }
   }
 
   // .faq__title
 
   &__title {
+    @media (max-width: $mobile) {
+      margin-bottom: 5px;
+    }
   }
 
   // .faq__spollers
@@ -38,13 +50,39 @@
     display: flex;
     align-items: center;
     height: max-content;
+
+    @media (max-width: $notebook) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @media (max-width: $tablet) {
+      flex-direction: unset;
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   // .faq__button
 
   &__button {
+    @media (max-width: $mobile) {
+      width: 100%;
+      justify-content: center;
+    }
     &:not(:last-child) {
       margin: 0 10px 0 0;
+
+      @media (max-width: $notebook) {
+        margin: 0 0 10px 0;
+      }
+      @media (max-width: $tablet) {
+        margin: 0 10px 0 0;
+      }
+      @media (max-width: $mobile) {
+        margin: 0 0 10px 0;
+      }
     }
   }
 }
@@ -63,7 +101,7 @@
   &__title {
     font-size: 18px;
     font-weight: 500;
-    line-height: 1;
+    white-space: normal;
     text-align: left;
     display: flex;
     align-items: center;
@@ -71,7 +109,10 @@
     width: 100%;
     border-bottom: 1px solid #e1e2e3;
     padding: 20px 20px 20px 0;
-    margin: 0 0 20px 0;
+
+    @media (max-width: $mobile) {
+      font-size: 16px;
+    }
 
     &::after {
       content: "";
@@ -80,6 +121,8 @@
       background-size: 100%;
       width: 16px;
       height: 9px;
+      flex-shrink: 0;
+      margin-left: 20px;
       transition: all 0.5s;
     }
 
@@ -95,6 +138,7 @@
 
   &__body {
     line-height: 1.9;
+    margin: 20px 0 0 0;
   }
 }
 .button {

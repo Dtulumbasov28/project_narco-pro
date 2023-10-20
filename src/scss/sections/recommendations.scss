@@ -20,8 +20,16 @@
 
   &__body {
     display: grid;
-    grid-template-columns: repeat(4, 370px);
+    grid-template-columns: repeat(4, 1fr);
     margin: -12px;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(1, 1fr);
+      margin: unset;
+    }
   }
 
   // .recommendations__item
@@ -35,6 +43,22 @@
     border: 1px solid #e1e2e3;
     padding: 25px 50px;
     margin: 12px;
+
+    @media (max-width: $notebook) {
+      padding: 15px 30px;
+    }
+    @media (max-width: $mobile) {
+      padding: 30px;
+      border-radius: 10px;
+      margin: unset;
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+    @media (max-width: $mobileBig) {
+      padding: 15px;
+    }
   }
 
   // .recommendations__button
