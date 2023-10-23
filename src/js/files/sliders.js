@@ -78,7 +78,7 @@ function initSliders() {
     modules: [Navigation],
     observer: true,
     slidesPerView: 5,
-    spaceBetween: 62,
+    spaceBetween: 60,
     observeParents: true,
     speed: 800,
     loop: true,
@@ -140,6 +140,42 @@ function initSliders() {
       },
       992: {
         slidesPerView: 3,
+      },
+    },
+  });
+  var conditionSlider = new Swiper(".service-slider__slider", {
+    // Указываем скласс нужного слайдера
+    // Подключаем модули слайдера
+    // для конкретного случая
+    modules: [Navigation],
+    observer: true,
+    slidesPerView: 4,
+    spaceBetween: 24,
+    observeParents: true,
+    speed: 800,
+    loop: true,
+    lazy: true,
+
+    // Кнопки "влево/вправо"
+    navigation: {
+      prevEl: ".service-slider__slider-prev",
+      nextEl: ".service-slider__slider-next",
+    },
+
+    // Брейкпоинты
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      1240: {
+        slidesPerView: 4,
       },
     },
   });

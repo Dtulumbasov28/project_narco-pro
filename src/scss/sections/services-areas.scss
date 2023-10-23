@@ -1,10 +1,10 @@
-.service-areas {
-  // .service-areas__container
+.services-areas {
+  // .services-areas__container
 
   &__container {
   }
 
-  // .service-areas__grid
+  // .services-areas__grid
 
   &__grid {
     display: grid;
@@ -21,7 +21,7 @@
     }
   }
 
-  // .service-areas__title
+  // .services-areas__title
 
   &__title {
     grid-area: 1 / 1 / 2 / 2;
@@ -36,7 +36,7 @@
     }
   }
 
-  // .service-areas__buttons
+  // .services-areas__buttons
 
   &__buttons {
     display: flex;
@@ -64,7 +64,7 @@
     }
   }
 
-  // .service-areas__button
+  // .services-areas__button
 
   &__button {
     @media (max-width: $notebook) {
@@ -92,7 +92,7 @@
     }
   }
 
-  // .service-areas__item
+  // .services-areas__item
 
   &__item {
     max-width: 430px;
@@ -102,7 +102,7 @@
     }
   }
 
-  // .service-areas__item-heading
+  // .services-areas__item-heading
 
   &__item-heading {
     font-size: 18px;
@@ -115,7 +115,7 @@
     }
   }
 
-  // .service-areas__item-img
+  // .services-areas__item-img
 
   &__item-img {
     max-height: 200px;
@@ -130,7 +130,7 @@
     }
   }
 
-  // .service-areas__item-desc
+  // .services-areas__item-desc
 
   &__item-desc {
     font-size: 15px;
@@ -138,7 +138,7 @@
     color: $secondaryThreeColor;
   }
 
-  // .service-areas__item-1
+  // .services-areas__item-1
 
   &__item-1 {
     grid-area: 1 / 2 / 5 / 4;
@@ -156,7 +156,7 @@
       margin: 0 0 20px 0;
     }
   }
-  // .service-areas__item-2
+  // .services-areas__item-2
 
   &__item-2 {
     grid-area: 1 / 4 / 5 / 6;
@@ -175,7 +175,7 @@
     }
   }
 
-  // .service-areas__item-3
+  // .services-areas__item-3
 
   &__item-3 {
     grid-area: 5 / 2 / 9 / 4;
@@ -194,7 +194,7 @@
     }
   }
 
-  // .service-areas__item-4
+  // .services-areas__item-4
 
   &__item-4 {
     grid-area: 5 / 4 / 9 / 6;

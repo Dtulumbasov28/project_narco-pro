@@ -234,6 +234,7 @@
     &::before {
       content: "";
       background: url("@img/icon/icon_map.svg") center center no-repeat;
+      background-size: 100%;
       width: 14px;
       height: 22px;
       position: absolute;

@@ -1,0 +1,113 @@
+.service-pinned {
+  // .service-pinned__container
+
+  &__container {
+  }
+
+  // .service-pinned__body
+
+  &__body {
+  }
+
+  // .service-pinned__title
+
+  &__title {
+    font-family: Oswald;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    @media (max-width: $mobileBig) {
+      margin-bottom: 20px;
+    }
+  }
+
+  // .service-pinned__list
+
+  &__list {
+    display: flex;
+    margin: -11px;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: center;
+      margin: 0 100px;
+    }
+    @media (max-width: $mobile) {
+      margin: 0 70px;
+    }
+    @media (max-width: $mobileBig) {
+      margin: 0;
+    }
+  }
+
+  // .service-pinned__item
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 11px;
+  }
+
+  // .service-pinned__img
+
+  &__img {
+    height: 230px;
+    margin-bottom: 15px;
+    border-radius: $borderRadius;
+    overflow: hidden;
+
+    @media (max-width: $notebook) {
+      height: 200px;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .service-pinned__heading
+
+  &__heading {
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  // .service-pinned__text
+
+  &__text {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  // .service-pinned__price
+
+  &__price {
+    font-family: Oswald;
+    font-size: 25px;
+    color: $secondaryOneColor;
+    text-transform: uppercase;
+
+    & span {
+      font-size: 20px;
+      color: $secondaryThreeColor;
+      text-transform: lowercase;
+    }
+  }
+
+  // .service-pinned__button
+
+  &__button {
+  }
+}
+.button {
+  // .button_theme
+
+  &_theme {
+  }
+}
