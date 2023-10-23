@@ -3734,7 +3734,7 @@
             modules: [ Navigation ],
             observer: true,
             slidesPerView: 5,
-            spaceBetween: 62,
+            spaceBetween: 60,
             observeParents: true,
             speed: 800,
             loop: true,
@@ -3783,6 +3783,34 @@
                 },
                 992: {
                     slidesPerView: 3
+                }
+            }
+        });
+        new core(".service-slider__slider", {
+            modules: [ Navigation ],
+            observer: true,
+            slidesPerView: 4,
+            spaceBetween: 24,
+            observeParents: true,
+            speed: 800,
+            loop: true,
+            lazy: true,
+            navigation: {
+                prevEl: ".service-slider__slider-prev",
+                nextEl: ".service-slider__slider-next"
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1
+                },
+                768: {
+                    slidesPerView: 2
+                },
+                992: {
+                    slidesPerView: 3
+                },
+                1240: {
+                    slidesPerView: 4
                 }
             }
         });
