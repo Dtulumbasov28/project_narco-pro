@@ -243,10 +243,23 @@
 
   // .header__elem-taxi
 
-  &__elem-taxi {
+  &__elem-taxi a {
     font-size: 15px;
     font-weight: 600;
     color: $mainColor;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      background: url("@img/taxi.png") center center no-repeat;
+      background-size: 100%;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
   }
 
   // .header__contact
@@ -445,12 +458,13 @@
 
   &__submenu-link {
     padding: 10px;
-  }
+    transition: 0.3s ease;
 
-  // .header-bottom__submenu-link
-
-  &__submenu-link {
-    padding: 10px;
+    @media (hover: hover) and (min-width: $tablet) {
+      &:hover {
+        color: $secondaryTwoColor;
+      }
+    }
   }
 }
 

@@ -73,6 +73,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"gh-pages": "^6.0.0",
 		"simplebar": "latest"
 	}
 }

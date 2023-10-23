@@ -167,8 +167,6 @@
   // .footer-menu__list
 
   &__list {
-    font-size: 15px;
-    color: $secondaryThreeColor;
   }
 
   // .footer-menu__item
@@ -180,7 +178,17 @@
   // .footer-menu__link
 
   &__link {
+    font-size: 15px;
+    color: $secondaryThreeColor;
     padding: 5px 0;
+    transition: 0.3s ease;
+
+    @media (hover: hover) and (min-width: $tablet) {
+      &:hover {
+        color: #000;
+        transition: 0.3s ease;
+      }
+    }
   }
 
   // .footer-menu__phone

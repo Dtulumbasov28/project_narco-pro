@@ -277,20 +277,7 @@
   // .main-form__input
 
   &__input {
-    font-size: 14px;
-    color: $secondaryThreeColor;
-    border-radius: 30px 3px;
-    border: 1px solid #e1e3e5;
-    background: #fff;
-    padding: 20px 30px;
     margin: 5px;
-
-    outline: 0;
-    outline-offset: 0;
-
-    @media (max-width: $mobile) {
-      padding: 15px 30px;
-    }
   }
 
   // .main-form__input-name
@@ -365,13 +352,13 @@
       border-radius: 150px 10px 10px 10px;
 
       @media (max-width: $tablet) {
-        border-radius: 10px;
+        border-radius: $borderRadius;
       }
     }
   }
   &:nth-child(2) {
     & .main-card__img {
-      border-radius: 10px;
+      border-radius: $borderRadius;
     }
   }
   &:nth-child(3) {
@@ -379,7 +366,7 @@
       border-radius: 10px 10px 150px 10px;
 
       @media (max-width: $tablet) {
-        border-radius: 10px;
+        border-radius: $borderRadius;
       }
     }
   }

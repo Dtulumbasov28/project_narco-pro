@@ -12,7 +12,7 @@
                         </p>
                         <div class="main__promo-price">Скидка 10% <span>на все услуги</span>
                         </div>
-                        <button data-popup="#popup" class="main__promo-button button button_theme_outline">
+                        <button data-popup="#popup-doc" class="main__promo-button button button_theme_outline">
                             Запись к врачу
                         </button>
                     </div>
@@ -27,12 +27,13 @@
                     <div class="main-form__title">Консультация по лечению <span>с врачом наркологом</span></div>
                     <div class="main-form__body">
                         <input required="required" placeholder="Ваше имя" type="text" name="name" value=""
-                            class="main-form__input main-form__input-name">
+                            class="main-form__input main-form__input-name input">
                         <input required="required" placeholder="Номер телефона" type="text" name="name" value=""
-                            class="main-form__input main-form__input-tel">
-                        <input required="required" placeholder="Номер телефона" type="submit" value="Заказать звонок"
+                            class="main-form__input main-form__input-tel input">
+                        <input required="required" type="submit" value="Заказать звонок"
                             class="main-form__submit button button_theme_gradient">
-                        <button data-popup="#popup" class="main-form__button button button_theme_red">Анонимный чат с врачом</button>
+                        <a href="https://api.whatsapp.com/send/?phone=79622470109" target="_blank"
+                            class="main-form__button button button_theme_red">Анонимный чат с врачом</a>
                     </div>
                     <div class="main-form__desc">
                         Отправляя заявку, Вы даете согласие с условиями обработки персональных данных, установленными
@@ -50,7 +51,8 @@
                             <div class="main-card__heading">Медицинское лечение зависимости</div>
                             <div class="main-card__price">7 000 ₽ <span>/ сутки</span></div>
                         </div>
-                        <button class="main-card__text-button button button_theme_outline">Записаться</button>
+                        <button data-popup="#popup-call"
+                            class="main-card__text-button button button_theme_outline">Записаться</button>
                     </div>
                 </li>
                 <li class="main__card main-card">
@@ -62,7 +64,8 @@
                             <div class="main-card__heading">Психосоциальная реабилитация</div>
                             <div class="main-card__price">1 200 ₽ <span>/ сутки</span></div>
                         </div>
-                        <button class="main-card__text-button button button_theme_outline">Записаться</button>
+                        <button data-popup="#popup-call"
+                            class="main-card__text-button button button_theme_outline">Записаться</button>
                     </div>
                 </li>
                 <li class="main__card main-card">
@@ -74,7 +77,8 @@
                             <div class="main-card__heading">Амбулаторная программа лечения</div>
                             <div class="main-card__price">3 500 ₽ <span>/ сутки</span></div>
                         </div>
-                        <button class="main-card__text-button button button_theme_outline">Записаться</button>
+                        <button data-popup="#popup-call"
+                            class="main-card__text-button button button_theme_outline">Записаться</button>
                     </div>
                 </li>
             </ul>

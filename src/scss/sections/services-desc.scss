@@ -37,7 +37,7 @@
     text-align: right;
 
     @media (max-width: $tablet) {
-      text-align-last: left;
+      text-align: left;
     }
   }
 
@@ -54,7 +54,7 @@
     }
 
     @media (max-width: $tablet) {
-      border-radius: 10px;
+      border-radius: $borderRadius;
       width: 70%;
       margin: 0 auto;
     }

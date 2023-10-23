@@ -74,7 +74,7 @@
       margin: 30px auto 0 auto;
     }
     @media (max-width: $mobileBig) {
-      border-radius: 10px;
+      border-radius: $borderRadius;
       padding: 30px;
     }
   }

@@ -378,7 +378,8 @@
 						<a href="tel:+74950323435" class="header-burger__phone">+7 (495) 032-34-35</a>
 						<div class="header-burger__address">г. Москва, Нижние поля, 21</div>
 						<div class="header-burger__schedule">Круглосуточно</div>
-						<button class="header-burger__button-call button button_theme_gradient">Звонок от врача</button>
+						<button data-popup="#popup-call"
+							class="header-burger__button-call button button_theme_gradient">Звонок от врача</button>
 						<ul class="header-burger__socials">
 							<li class="header-burger__socials-item">
 								<a href="#" class="header-burger__socials-link">
@@ -436,12 +437,13 @@
 					<a href="tel:74950323435" target="_blank" class="header__contact-phone">+7 495 032-34-35</a>
 				</div>
 				<div class="header__contact-bottom">
-					<button data-popup="#popup" class="header__contact-call">Заказать звонок</button>
+					<button data-popup="#popup-call" class="header__contact-call">Заказать звонок</button>
 				</div>
 			</div>
-			<button class="header__chat button button_theme_gradient">
+			<a href="https://api.whatsapp.com/send/?phone=79622470109" target="_blank"
+				class="header__chat button button_theme_gradient">
 				Анонимный чат с врачом
-			</button>
+			</a>
 		</div>
 	</div>
 </header>
