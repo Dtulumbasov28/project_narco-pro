@@ -1,0 +1,78 @@
+.photo {
+  @media (max-width: $mobileBig) {
+    position: relative;
+  }
+  // .photo__container
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  // .photo__title
+
+  &__title {
+    margin-right: 30px;
+  }
+
+  // .photo__navigation
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  // .photo__slider-prev
+
+  &__slider-prev {
+    position: unset;
+    transform: unset;
+    margin-right: 30px;
+
+    @media (max-width: $mobileBig) {
+      position: absolute;
+      top: unset;
+      bottom: 125px;
+    }
+  }
+
+  // .photo__slider-next
+
+  &__slider-next {
+    position: unset;
+    transform: rotate(180deg);
+
+    @media (max-width: $mobileBig) {
+      position: absolute;
+      transform: rotate(180deg);
+      top: unset;
+      bottom: 125px;
+    }
+  }
+
+  // .photo__slider
+
+  &__slider {
+  }
+
+  // .photo__slider-wrapper
+
+  &__slider-wrapper {
+  }
+
+  // .photo__slide
+
+  &__slide {
+    max-width: 400px;
+    max-height: 300px;
+
+    @media (max-width: $mobileBig) {
+      max-height: 250px;
+      border-radius: $borderRadius;
+      overflow: hidden;
+    }
+    @media (max-width: $mobileSmall) {
+      max-width: 300px;
+    }
+  }
+}

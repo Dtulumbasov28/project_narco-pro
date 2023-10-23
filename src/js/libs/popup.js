@@ -102,7 +102,7 @@ class Popup {
 		this.options.init ? this.initPopups() : null
 	}
 	initPopups() {
-		this.popupLogging(`Проснулся`);
+		// this.popupLogging(`Проснулся`);
 		this.eventsPopup();
 	}
 	eventsPopup() {
@@ -125,7 +125,8 @@ class Popup {
 					this.open();
 					return;
 
-				} else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);
+				}
+				//  else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);
 
 				return;
 			}
@@ -250,9 +251,10 @@ class Popup {
 						popup: this
 					}
 				}));
-				this.popupLogging(`Открыл попап`);
+				// this.popupLogging(`Открыл попап`);
 
-			} else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
+			} 
+			// else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
 		}
 	}
 	close(selectorValue) {
@@ -304,7 +306,7 @@ class Popup {
 			this._focusTrap();
 		}, 50);
 
-		this.popupLogging(`Закрыл попап`);
+		// this.popupLogging(`Закрыл попап`);
 	}
 	// Получение хэша 
 	_getHash() {
