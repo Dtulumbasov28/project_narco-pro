@@ -432,7 +432,6 @@
             this.options.init ? this.initPopups() : null;
         }
         initPopups() {
-            this.popupLogging(`Проснулся`);
             this.eventsPopup();
         }
         eventsPopup() {
@@ -448,7 +447,7 @@
                         this._selectorOpen = true;
                         this.open();
                         return;
-                    } else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);
+                    }
                     return;
                 }
                 const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
@@ -533,8 +532,7 @@
                             popup: this
                         }
                     }));
-                    this.popupLogging(`Открыл попап`);
-                } else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
+                }
             }
         }
         close(selectorValue) {
@@ -568,7 +566,6 @@
             setTimeout((() => {
                 this._focusTrap();
             }), 50);
-            this.popupLogging(`Закрыл попап`);
         }
         _getHash() {
             if (this.options.hashSettings.location) this.hash = this.targetOpen.selector.includes("#") ? this.targetOpen.selector : this.targetOpen.selector.replace(".", "#");
@@ -3814,6 +3811,21 @@
                 }
             }
         });
+        new core(".photo__slider", {
+            modules: [ Navigation ],
+            observer: true,
+            slidesPerView: "auto",
+            spaceBetween: 24,
+            observeParents: true,
+            centeredSlides: true,
+            speed: 800,
+            loop: true,
+            lazy: true,
+            navigation: {
+                prevEl: ".photo__slider-prev",
+                nextEl: ".photo__slider-next"
+            }
+        });
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -3827,6 +3839,131 @@
             }));
         }
     }), 0);
+    function resizeScrenText() {
+        document.querySelectorAll(".content__container").forEach((function(el) {
+            var button = el.querySelector(".content__button");
+            if (button) button.addEventListener("click", (function() {
+                el.classList.toggle("disclosed");
+                button.textContent = el.classList.contains("disclosed") ? "Скрыть текст" : "Открыть текст";
+            }));
+        }));
+    }
+    resizeScrenText();
+    !function() {
+        function e() {
+            var generateOglav = function() {
+                var generated_classname = "generated-oglav";
+                var beforeHTML = '<div class="' + generated_classname + '"><p class="oglav_heading">Содержание</p><ol>';
+                var generedLinks = "";
+                var afterHTML = "</ol></div>";
+                var injectIn = ".article__oglav";
+                var searchContent = ".article__oglav";
+                var glavs = ".article-content__text h2, .article-content__text h3";
+                var addH3 = "";
+                var forbidUrls = [ "/" ];
+                var stope = ".oglav";
+                var whitelist = ".article-content__text h2";
+                var methodAdd = 1;
+                var stylingList = 2;
+                var smoothSelector = "." + generated_classname + " a";
+                var fromTopSelector = 140;
+                var fromTopSelector_add = 0;
+                var fromTopSelector_mob = 0;
+                var fromTopSelector_mob_add = 20;
+                var mobile_start = 1240;
+                var smoothScroll = function(params) {
+                    var smoothSelector = params.smoothSelector;
+                    var fromTopSelector = params.fromTopSelector;
+                    var fromTopSelector_add = params.fromTopSelector_add || 0;
+                    var fromTopSelector_mob = params.fromTopSelector_mob || "";
+                    var fromTopSelector_mob_add = params.fromTopSelector_mob_add || 0;
+                    var mobile_start = params.mobile_start || 0;
+                    jQuery(smoothSelector).click((function() {
+                        if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
+                            var target = jQuery(this.hash);
+                            target = target.length ? target : jQuery("[name=" + this.hash.slice(1) + "]");
+                            var header_height = 0;
+                            if (document.documentElement.clientWidth <= mobile_start) {
+                                fromTopSelector = fromTopSelector_mob;
+                                fromTopSelector_add = fromTopSelector_mob_add;
+                            }
+                            if (typeof fromTopSelector == "number") header_height = fromTopSelector; else if (fromTopSelector != "" && jQuery(fromTopSelector).length > 0) header_height = jQuery(fromTopSelector).outerHeight();
+                            fromtop = target.offset().top - header_height - fromTopSelector_add;
+                            if (target.length) {
+                                jQuery("html,body").animate({
+                                    scrollTop: fromtop
+                                }, 0);
+                                return false;
+                            }
+                        }
+                    }));
+                };
+                var createOglav = function() {
+                    if (whitelist !== "" || jQuery(whitelist).length > 0) if (jQuery.inArray(window.location.pathname, forbidUrls) == -1 && jQuery(glavs).length > 0 && jQuery(injectIn).length > 0 && jQuery(searchContent).length > 0 && jQuery(stope).length == false) {
+                        jQuery(glavs).each((function(i) {
+                            var current = jQuery(this);
+                            var current_text = current.text();
+                            if (current_text.slice(-1) == ":") current_text = current_text.slice(0, -1);
+                            current.attr("id", "zagol-" + i);
+                            if (current.is("h3")) {
+                                current.addClass(addH3);
+                                generedLinks += '<li><a class="oglav-h3" href="#zagol-' + i + '">' + current_text + "</a></li>";
+                                if (stylingList > 1) {
+                                    var curElInd = jQuery(glavs).index(current);
+                                    if (jQuery(glavs).eq(curElInd + 1).is("h2") || current == jQuery(glavs).last()) generedLinks += "</li>";
+                                }
+                            } else switch (stylingList) {
+                              case 1:
+                                generedLinks += '<a href="#zagol-' + i + '">' + current_text + "</a>";
+                                break;
+
+                              case 2:
+                              case 3:
+                                generedLinks += "<li>";
+                                generedLinks += '<a href="#zagol-' + i + '">' + current_text + "</a>";
+                                curElInd = jQuery(glavs).index(current);
+                                if (jQuery(glavs).eq(curElInd + 1).is("h3") || current == jQuery(glavs).last()) generedLinks += "</li>";
+                                break;
+                            }
+                        }));
+                        switch (methodAdd) {
+                          case 1:
+                            jQuery(injectIn + ":first").prepend(beforeHTML + generedLinks + afterHTML);
+                            console.log("добавили наше оглавление к эл-у в начале");
+                            break;
+
+                          case 2:
+                            jQuery(injectIn + ":first").append(beforeHTML + generedLinks + afterHTML);
+                            break;
+
+                          case 3:
+                            jQuery(injectIn + ":first").after(beforeHTML + generedLinks + afterHTML);
+                            break;
+
+                          case 4:
+                            jQuery(injectIn + ":first").before(beforeHTML + generedLinks + afterHTML);
+                            break;
+                        }
+                        var smoothScroll_obj = {
+                            smoothSelector,
+                            fromTopSelector,
+                            fromTopSelector_add,
+                            fromTopSelector_mob,
+                            fromTopSelector_mob_add,
+                            mobile_start
+                        };
+                        smoothScroll(smoothScroll_obj);
+                    }
+                };
+                jQuery(document).ready(createOglav);
+            };
+            generateOglav();
+        }
+        "interactive" == document.readyState || "complete" == document.readyState ? e() : document.addEventListener("DOMContentLoaded", (function() {
+            e();
+        }));
+    }();
+    console.log(111);
     window["FLS"] = true;
     isWebp();
     menuInit();
