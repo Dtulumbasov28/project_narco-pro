@@ -1,0 +1,245 @@
+.article {
+  padding: 15px 0 50px 0;
+  // .article__container
+
+  &__container {
+  }
+
+  // .article__breadcrumbs
+
+  &__breadcrumbs {
+  }
+
+  // .article__breadcrumbs-item
+
+  &__breadcrumbs-item {
+  }
+
+  // .article__breadcrumbs-link
+
+  &__breadcrumbs-link {
+  }
+
+  // .article__body
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  // .article__sidemenu
+
+  &__sidemenu {
+    @media (max-width: $netbok) {
+      display: none;
+    }
+  }
+
+  // .article__content
+
+  &__content {
+  }
+
+  // .article__oglav
+
+  &__oglav {
+  }
+}
+.article-content {
+  max-width: 910px;
+
+  @media (max-width: $notebook) {
+    max-width: 750px;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 100%;
+  }
+  // .article-content__text
+
+  &__text {
+    figure {
+      border-radius: $borderRadius;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    figure figcaption {
+      color: $secondaryThreeColor;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    h2 {
+      font-family: $fontFamily;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    h3 {
+      font-family: $fontFamily;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    h4 {
+      font-family: $fontFamily;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    h5 {
+      font-family: $fontFamily;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  // .article-content__title
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  // .article-content__date
+
+  &__date {
+    color: $secondaryThreeColor;
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  // .article-content__navigation
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    @media (max-width: $mobileBig) {
+      flex-direction: column;
+    }
+  }
+
+  // .article-content__navigation-button
+  &__navigation-button {
+    color: $secondaryTwoColor;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: unset;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    transition: 0.3s ease;
+
+    @media (max-width: $mobile) {
+      font-size: 12px;
+    }
+
+    @media (max-width: $mobileBig) {
+      max-width: 100%;
+    }
+
+    @media (hover: hover) and (min-width: $tablet) {
+      &:hover {
+        color: $secondaryOneColor;
+      }
+    }
+  }
+
+  &__navigation-prev {
+    margin-right: 10px;
+    text-align: left;
+
+    @media (max-width: $mobileBig) {
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+
+    &::before {
+      content: "";
+      background: url("@img/icon/icon_arrow.svg") center center no-repeat;
+      background-size: 100%;
+      width: 27px;
+      height: 46px;
+      margin-right: 20px;
+      flex-shrink: 0;
+
+      @media (max-width: $mobile) {
+        width: 20px;
+        height: 46px;
+        margin-right: 14px;
+      }
+    }
+  }
+
+  // .article-content__navigation-next
+
+  &__navigation-next {
+    text-align: right;
+
+    @media (max-width: $mobileBig) {
+      margin-left: auto;
+    }
+
+    &::after {
+      content: "";
+      background: url("@img/icon/icon_arrow.svg") center center no-repeat;
+      background-size: 100%;
+      width: 27px;
+      height: 46px;
+      transform: rotate(180deg);
+      margin-left: 20px;
+      flex-shrink: 0;
+
+      @media (max-width: $mobile) {
+        width: 20px;
+        height: 46px;
+        margin-left: 14px;
+      }
+    }
+  }
+}
+
+.oglav {
+  width: 100%;
+  max-width: 200px;
+  margin-left: 20px;
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+  // .oglav__heading
+
+  &__heading {
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  // .oglav__list
+
+  &__list {
+  }
+
+  // .oglav__item
+
+  &__item {
+    font-weight: 600;
+    padding: 10px 0;
+
+    @media (max-width: $notebook) {
+      font-size: 14px;
+    }
+  }
+
+  // .oglav__link
+
+  &__link {
+  }
+}

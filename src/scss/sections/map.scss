@@ -1,0 +1,123 @@
+.map {
+  // .map__container
+
+  &__container {
+  }
+
+  // .map__body
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+
+  // .map__iframe
+
+  &__iframe {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 150px 5px 5px 5px;
+    overflow: hidden;
+    grid-area: 1 / 1 / 3 / 2;
+
+    @media (max-width: $tablet) {
+      border-radius: $borderRadius;
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    @media (max-width: $mobile) {
+      max-height: 340px;
+    }
+  }
+
+  // .map__text
+
+  &__text {
+    margin: 0 0 0 85px;
+    grid-area: 1 / 2 / 2 / 3;
+
+    @media (max-width: $tablet) {
+      margin: 0 0 30px 0;
+      grid-area: 1 / 1 / 2 / 2;
+    }
+  }
+
+  // .map__title
+
+  &__title {
+    margin-bottom: 5px;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 10px;
+    }
+  }
+
+  // .map__desc
+
+  &__desc {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+
+    @media (max-width: $notebook) {
+      font-size: 16px;
+    }
+    @media (max-width: $tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
+  // .map__address-heading
+
+  &__address-heading {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+
+    @media (max-width: $notebook) {
+      font-size: 16px;
+    }
+    @media (max-width: $tablet) {
+      margin-bottom: 10px;
+    }
+  }
+
+  // .map__address
+
+  &__address {
+  }
+
+  // .map__img
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    max-width: 435px;
+    max-height: 250px;
+    border-radius: 150px 10px;
+    overflow: hidden;
+    transform: translate(-100px, -20px);
+    grid-area: 2 / 2 / 3 / 3;
+
+    @media (max-width: $notebook) {
+      transform: translate(-100px, 0);
+    }
+
+    @media (max-width: $tablet) {
+      transform: unset;
+      border-radius: $borderRadius;
+      margin: 20px auto 0 auto;
+      grid-area: 3 / 1 / 4 / 2;
+    }
+    @media (max-width: $mobile) {
+      margin: 10px auto 0 auto;
+    }
+  }
+}

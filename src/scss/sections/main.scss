@@ -179,32 +179,6 @@
   // .main__form
 
   &__form {
-    border-radius: 120px 5px;
-    background: rgba(240, 242, 244, 0.7);
-    backdrop-filter: blur(10px);
-    padding: 40px 50px 40px 60px;
-    margin: 0 0 70px 0;
-
-    @media (max-width: $notebook) {
-      padding: 40px;
-    }
-    @media (max-width: $mobileBig) {
-      position: relative;
-      border-radius: unset;
-      background: unset;
-      padding: 20px 0;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -12px;
-        width: calc(100% + 24px);
-        height: 100%;
-        background: rgba(240, 242, 244, 0.7);
-        z-index: -1;
-      }
-    }
   }
 
   // .main__form-wrapper
@@ -238,100 +212,7 @@
   &__card-price {
   }
 }
-.main-form {
-  // .main-form__title
 
-  &__title {
-    font-family: Oswald;
-    font-size: 25px;
-    text-transform: uppercase;
-    margin: 0 0 20px 0;
-
-    @media (max-width: $mobileBig) {
-      text-align: center;
-    }
-
-    & span {
-      color: $secondaryTwoColor;
-    }
-  }
-
-  // .main-form__body
-
-  &__body {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    justify-content: flex-start;
-    margin: -5px;
-
-    @media (max-width: $tablet) {
-      grid-template-columns: repeat(2, auto);
-      justify-content: unset;
-    }
-    @media (max-width: $mobile) {
-      grid-template-columns: repeat(1, auto);
-      justify-content: unset;
-    }
-  }
-
-  // .main-form__input
-
-  &__input {
-    margin: 5px;
-  }
-
-  // .main-form__input-name
-
-  &__input-name {
-  }
-
-  // .main-form__input-tel
-
-  &__input-tel {
-  }
-
-  // .main-form__submit
-
-  &__submit {
-    cursor: pointer;
-    padding: 20px 30px;
-    margin: 5px;
-
-    @media (max-width: $tablet) {
-      width: calc(100% - 10px);
-    }
-    @media (max-width: $mobile) {
-      padding: 15px 30px;
-      justify-content: center;
-    }
-  }
-
-  // .main-form__button
-
-  &__button {
-    padding: 20px 30px;
-    margin: 5px;
-
-    @media (max-width: $tablet) {
-      width: calc(100% - 10px);
-    }
-    @media (max-width: $mobile) {
-      padding: 15px 30px;
-      justify-content: center;
-    }
-  }
-
-  // .main-form__desc
-
-  &__desc {
-    font-size: 15px;
-    margin: 20px 0 0 0;
-
-    @media (max-width: $mobileBig) {
-      text-align: center;
-    }
-  }
-}
 .button {
   // .button_theme
 

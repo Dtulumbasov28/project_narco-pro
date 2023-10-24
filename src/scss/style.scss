@@ -64,6 +64,7 @@ $pc: em(
   $containerWidth
 ); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $notebook: em(1439.98); // Ноутбук
+$netbok: em(1239.98); // Ноутбук
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
 $mobileBig: em(574.98); // Телефоны M
@@ -200,3 +201,9 @@ body {
 @import "sections/complex-approach";
 @import "sections/service-slider";
 @import "sections/photo";
+@import "sections/content";
+@import "sections/map";
+@import "sections/navigation";
+@import "sections/contacts-map";
+@import "sections/articles";
+@import "sections/article";
