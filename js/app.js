@@ -14,7 +14,7 @@
             document.documentElement.classList.add(className);
         }));
     }
-    function functions_getHash() {
+    function getHash() {
         if (location.hash) return location.hash.replace("#", "");
     }
     function setHash(hash) {
@@ -212,7 +212,7 @@
         const tabs = document.querySelectorAll("[data-tabs]");
         let tabsActiveHash = [];
         if (tabs.length > 0) {
-            const hash = functions_getHash();
+            const hash = getHash();
             if (hash && hash.startsWith("tab-")) tabsActiveHash = hash.replace("tab-", "").split("-");
             tabs.forEach(((tabsBlock, index) => {
                 tabsBlock.classList.add("_tab-init");
@@ -312,6 +312,10 @@
                 document.documentElement.classList.toggle("menu-open");
             }
         }));
+    }
+    function menuClose() {
+        bodyUnlock();
+        document.documentElement.classList.remove("menu-open");
     }
     function functions_FLS(message) {
         setTimeout((() => {
@@ -468,14 +472,6 @@
                     return;
                 }
             }.bind(this));
-            if (this.options.hashSettings.goHash) {
-                window.addEventListener("hashchange", function() {
-                    if (window.location.hash) this._openToHash(); else this.close(this.targetOpen.selector);
-                }.bind(this));
-                window.addEventListener("load", function() {
-                    if (window.location.hash) this._openToHash();
-                }.bind(this));
-            }
         }
         open(selectorValue) {
             if (bodyLockStatus) {
@@ -603,6 +599,35 @@
         }
     }
     modules_flsModules.popup = new Popup({});
+    let gotoblock_gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+        const targetBlockElement = document.querySelector(targetBlock);
+        if (targetBlockElement) {
+            let headerItem = "";
+            let headerItemHeight = 0;
+            if (noHeader) {
+                headerItem = "header.header";
+                headerItemHeight = document.querySelector(headerItem).offsetHeight;
+            }
+            let options = {
+                speedAsDuration: true,
+                speed,
+                header: headerItem,
+                offset: offsetTop,
+                easing: "easeOutQuad"
+            };
+            document.documentElement.classList.contains("menu-open") ? menuClose() : null;
+            if (typeof SmoothScroll !== "undefined") (new SmoothScroll).animateScroll(targetBlockElement, "", options); else {
+                let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
+                targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+                targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+                window.scrollTo({
+                    top: targetBlockElementPosition,
+                    behavior: "smooth"
+                });
+            }
+            functions_FLS(`[gotoBlock]: Юхуу...едем к ${targetBlock}`);
+        } else functions_FLS(`[gotoBlock]: Ой ой..Такого блока нет на странице: ${targetBlock}`);
+    };
     function ssr_window_esm_isObject(obj) {
         return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
     }
@@ -3831,6 +3856,44 @@
         initSliders();
     }));
     let addWindowScrollEvent = false;
+    function pageNavigation() {
+        document.addEventListener("click", pageNavigationAction);
+        document.addEventListener("watcherCallback", pageNavigationAction);
+        function pageNavigationAction(e) {
+            if (e.type === "click") {
+                const targetElement = e.target;
+                if (targetElement.closest("[data-goto]")) {
+                    const gotoLink = targetElement.closest("[data-goto]");
+                    const gotoLinkSelector = gotoLink.dataset.goto ? gotoLink.dataset.goto : "";
+                    const noHeader = gotoLink.hasAttribute("data-goto-header") ? true : false;
+                    const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
+                    const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
+                    gotoblock_gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+                    e.preventDefault();
+                }
+            } else if (e.type === "watcherCallback" && e.detail) {
+                const entry = e.detail.entry;
+                const targetElement = entry.target;
+                if (targetElement.dataset.watch === "navigator") {
+                    document.querySelector(`[data-goto]._navigator-active`);
+                    let navigatorCurrentItem;
+                    if (targetElement.id && document.querySelector(`[data-goto="#${targetElement.id}"]`)) navigatorCurrentItem = document.querySelector(`[data-goto="#${targetElement.id}"]`); else if (targetElement.classList.length) for (let index = 0; index < targetElement.classList.length; index++) {
+                        const element = targetElement.classList[index];
+                        if (document.querySelector(`[data-goto=".${element}"]`)) {
+                            navigatorCurrentItem = document.querySelector(`[data-goto=".${element}"]`);
+                            break;
+                        }
+                    }
+                    if (entry.isIntersecting) navigatorCurrentItem ? navigatorCurrentItem.classList.add("_navigator-active") : null; else navigatorCurrentItem ? navigatorCurrentItem.classList.remove("_navigator-active") : null;
+                }
+            }
+        }
+        if (getHash()) {
+            let goToHash;
+            if (document.querySelector(`#${getHash()}`)) goToHash = `#${getHash()}`; else if (document.querySelector(`.${getHash()}`)) goToHash = `.${getHash()}`;
+            goToHash ? gotoblock_gotoBlock(goToHash, true, 500, 20) : null;
+        }
+    }
     setTimeout((() => {
         if (addWindowScrollEvent) {
             let windowScroll = new Event("windowScroll");
@@ -3849,124 +3912,41 @@
         }));
     }
     resizeScrenText();
-    !function() {
-        function e() {
-            var generateOglav = function() {
-                var generated_classname = "generated-oglav";
-                var beforeHTML = '<div class="' + generated_classname + '"><p class="oglav_heading">Содержание</p><ol>';
-                var generedLinks = "";
-                var afterHTML = "</ol></div>";
-                var injectIn = ".article__oglav";
-                var searchContent = ".article__oglav";
-                var glavs = ".article-content__text h2, .article-content__text h3";
-                var addH3 = "";
-                var forbidUrls = [ "/" ];
-                var stope = ".oglav";
-                var whitelist = ".article-content__text h2";
-                var methodAdd = 1;
-                var stylingList = 2;
-                var smoothSelector = "." + generated_classname + " a";
-                var fromTopSelector = 140;
-                var fromTopSelector_add = 0;
-                var fromTopSelector_mob = 0;
-                var fromTopSelector_mob_add = 20;
-                var mobile_start = 1240;
-                var smoothScroll = function(params) {
-                    var smoothSelector = params.smoothSelector;
-                    var fromTopSelector = params.fromTopSelector;
-                    var fromTopSelector_add = params.fromTopSelector_add || 0;
-                    var fromTopSelector_mob = params.fromTopSelector_mob || "";
-                    var fromTopSelector_mob_add = params.fromTopSelector_mob_add || 0;
-                    var mobile_start = params.mobile_start || 0;
-                    jQuery(smoothSelector).click((function() {
-                        if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
-                            var target = jQuery(this.hash);
-                            target = target.length ? target : jQuery("[name=" + this.hash.slice(1) + "]");
-                            var header_height = 0;
-                            if (document.documentElement.clientWidth <= mobile_start) {
-                                fromTopSelector = fromTopSelector_mob;
-                                fromTopSelector_add = fromTopSelector_mob_add;
-                            }
-                            if (typeof fromTopSelector == "number") header_height = fromTopSelector; else if (fromTopSelector != "" && jQuery(fromTopSelector).length > 0) header_height = jQuery(fromTopSelector).outerHeight();
-                            fromtop = target.offset().top - header_height - fromTopSelector_add;
-                            if (target.length) {
-                                jQuery("html,body").animate({
-                                    scrollTop: fromtop
-                                }, 0);
-                                return false;
-                            }
-                        }
-                    }));
-                };
-                var createOglav = function() {
-                    if (whitelist !== "" || jQuery(whitelist).length > 0) if (jQuery.inArray(window.location.pathname, forbidUrls) == -1 && jQuery(glavs).length > 0 && jQuery(injectIn).length > 0 && jQuery(searchContent).length > 0 && jQuery(stope).length == false) {
-                        jQuery(glavs).each((function(i) {
-                            var current = jQuery(this);
-                            var current_text = current.text();
-                            if (current_text.slice(-1) == ":") current_text = current_text.slice(0, -1);
-                            current.attr("id", "zagol-" + i);
-                            if (current.is("h3")) {
-                                current.addClass(addH3);
-                                generedLinks += '<li><a class="oglav-h3" href="#zagol-' + i + '">' + current_text + "</a></li>";
-                                if (stylingList > 1) {
-                                    var curElInd = jQuery(glavs).index(current);
-                                    if (jQuery(glavs).eq(curElInd + 1).is("h2") || current == jQuery(glavs).last()) generedLinks += "</li>";
-                                }
-                            } else switch (stylingList) {
-                              case 1:
-                                generedLinks += '<a href="#zagol-' + i + '">' + current_text + "</a>";
-                                break;
-
-                              case 2:
-                              case 3:
-                                generedLinks += "<li>";
-                                generedLinks += '<a href="#zagol-' + i + '">' + current_text + "</a>";
-                                curElInd = jQuery(glavs).index(current);
-                                if (jQuery(glavs).eq(curElInd + 1).is("h3") || current == jQuery(glavs).last()) generedLinks += "</li>";
-                                break;
-                            }
-                        }));
-                        switch (methodAdd) {
-                          case 1:
-                            jQuery(injectIn + ":first").prepend(beforeHTML + generedLinks + afterHTML);
-                            console.log("добавили наше оглавление к эл-у в начале");
-                            break;
-
-                          case 2:
-                            jQuery(injectIn + ":first").append(beforeHTML + generedLinks + afterHTML);
-                            break;
-
-                          case 3:
-                            jQuery(injectIn + ":first").after(beforeHTML + generedLinks + afterHTML);
-                            break;
-
-                          case 4:
-                            jQuery(injectIn + ":first").before(beforeHTML + generedLinks + afterHTML);
-                            break;
-                        }
-                        var smoothScroll_obj = {
-                            smoothSelector,
-                            fromTopSelector,
-                            fromTopSelector_add,
-                            fromTopSelector_mob,
-                            fromTopSelector_mob_add,
-                            mobile_start
-                        };
-                        smoothScroll(smoothScroll_obj);
-                    }
-                };
-                jQuery(document).ready(createOglav);
-            };
-            generateOglav();
+    function generatorOglav() {
+        var articlePage = document.querySelector(".article");
+        if (articlePage) {
+            var tpl = '<div class="oglav__heading">Содержание</div><ul class="oglav__list">{{contents}}</ul>';
+            let contents = "";
+            var elHeaders = document.querySelectorAll(".article-content__text h2, .article-content__text h3");
+            if (!elHeaders.length) ; else {
+                elHeaders.forEach(((el, index) => {
+                    if (!el.id) el.id = `title-${index}`;
+                    var url = `#${el.id}`;
+                    contents += `<li class="oglav__item"><button data-goto-header data-goto="${url}" class="oglav__link">${el.textContent}</button></li>`;
+                }));
+                document.querySelector(".article__oglav").insertAdjacentHTML("afterbegin", tpl.replace("{{contents}}", contents));
+            }
         }
-        "interactive" == document.readyState || "complete" == document.readyState ? e() : document.addEventListener("DOMContentLoaded", (function() {
-            e();
+    }
+    generatorOglav();
+    function formValue() {
+        let openModalBtn = document.getElementsByClassName("price-item__order");
+        let setAttrInput = document.querySelector("input[type=hidden]");
+        for (let i = 0; i < openModalBtn.length; i++) openModalBtn[i].addEventListener("click", (function() {
+            let val = openModalBtn[i].value;
+            openModalWindow(val);
         }));
-    }();
-    console.log(111);
+        function openModalWindow(val) {
+            if (openModalBtn.value === "") setAttrInput.setAttribute("value", "");
+            setAttrInput.value = val;
+            console.log(setAttrInput);
+        }
+    }
+    formValue();
     window["FLS"] = true;
     isWebp();
     menuInit();
     spollers();
     tabs();
+    pageNavigation();
 })();

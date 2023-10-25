@@ -6,11 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231024173146">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231025122931">
 	<link rel="shortcut icon" href="favicon.svg">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js?_v=20231024173146"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js?_v=20231025122931"></script>
 </head>
 
 <body>
@@ -942,10 +942,12 @@
 									молодых
 									людей.
 								</p>
+								<h3>заголовок 3</h3>
 								<figure>
 									<img src="img/article/article-10.jpg" width="900" height="500" alt="Описание или название картинки">
 									<figcaption>Описание или название картинки</figcaption>
 								</figure>
+								<h2>тестовая 2</h2>
 								<p>
 									Социальная адаптация и ресоциализация – это процессы, без которых не обходится ни один курс
 									реабилитации в нашем центре. Чтобы забыть о наркотиках, пациентам требуется пройти долгий путь,
@@ -964,28 +966,73 @@
 							</div>
 						</div>
 						<div class="article__oglav oglav">
-							<div class="oglav__heading">Содержание</div>
-							<ul class="oglav__list">
-								<li class="oglav__item">
-									<a href="#" class="oglav__link">Суть проекта</a>
-								</li>
-								<li class="oglav__item">
-									<a href="#" class="oglav__link"> Предпосылки создания</a>
-								</li>
-								<li class="oglav__item">
-									<a href="#" class="oglav__link"> Цели и задачи</a>
-								</li>
-								<li class="oglav__item">
-									<a href="#" class="oglav__link"> Команда проекта</a>
-								</li>
-								<li class="oglav__item">
-									<a href="#" class="oglav__link"> Сожности в реализации</a>
-								</li>
-								<li class="oglav__item">
-									<a href="#" class="oglav__link">Результаты проекта</a>
-								</li>
-							</ul>
 						</div>
+						<div class="article__bottom">
+							<section class="recommend">
+								<div class="recommend__container">
+									<h2 class="recommend__title title">
+										Рекомендуем почитать
+									</h2>
+									<div class="recommend__body">
+										<div class="recommend__item">
+											<div class="recommend__img">
+												<img src="img/article/article-1.jpg" alt="Что такое наркотик соль, влияние наркотика на организм" class="cover">
+											</div>
+											<div class="recommend__date">9 октября 2023</div>
+											<a href="#" class="recommend__heading">
+												Что такое наркотик соль, влияние наркотика на организм
+											</a>
+										</div>
+										<div class="recommend__item">
+											<div class="recommend__img">
+												<img src="img/article/article-2.jpg" alt="Что такое наркотик соль, влияние наркотика на организм" class="cover">
+											</div>
+											<div class="recommend__date">9 октября 2023</div>
+											<a href="#" class="recommend__heading">
+												Что такое наркотик соль, влияние наркотика на организм
+											</a>
+										</div>
+										<div class="recommend__item">
+											<div class="recommend__img">
+												<img src="img/article/article-3.jpg" alt="Что такое наркотик соль, влияние наркотика на организм" class="cover">
+											</div>
+											<div class="recommend__date">9 октября 2023</div>
+											<a href="#" class="recommend__heading">
+												Что такое наркотик соль, влияние наркотика на организм
+											</a>
+										</div>
+										<div class="recommend__item">
+											<div class="recommend__img">
+												<img src="img/article/article-4.jpg" alt="Что такое наркотик соль, влияние наркотика на организм" class="cover">
+											</div>
+											<div class="recommend__date">9 октября 2023</div>
+											<a href="#" class="recommend__heading">
+												Что такое наркотик соль, влияние наркотика на организм
+											</a>
+										</div>
+										<div class="recommend__item">
+											<div class="recommend__img">
+												<img src="img/article/article-5.jpg" alt="Что такое наркотик соль, влияние наркотика на организм" class="cover">
+											</div>
+											<div class="recommend__date">9 октября 2023</div>
+											<a href="#" class="recommend__heading">
+												Что такое наркотик соль, влияние наркотика на организм
+											</a>
+										</div>
+										<div class="recommend__item">
+											<div class="recommend__img">
+												<img src="img/article/article-6.jpg" alt="Что такое наркотик соль, влияние наркотика на организм" class="cover">
+											</div>
+											<div class="recommend__date">9 октября 2023</div>
+											<a href="#" class="recommend__heading">
+												Что такое наркотик соль, влияние наркотика на организм
+											</a>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+
 					</div>
 				</div>
 			</section>
@@ -1166,6 +1213,7 @@
 					<div class="popup__body">
 						<input required="required" placeholder="Ваше имя" type="text" name="name" value="" class="popup__input input popup__input-name">
 						<input required="required" placeholder="Номер телефона" type="text" name="name" value="" class="popup__input input popup__input-tel">
+						<input type="hidden" value="" class="popup__input input popup__input-hidden">
 						<input type="submit" value="Заказать звонок" class="popup__submit button button_theme_gradient">
 					</div>
 					<div class="popup__desc">
@@ -1199,7 +1247,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20231024173146"></script>
+	<script src="js/app.min.js?_v=20231025122931"></script>
 </body>
 
 </html>
