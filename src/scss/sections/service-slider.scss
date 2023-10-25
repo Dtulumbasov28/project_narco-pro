@@ -8,6 +8,11 @@
 
   &__title {
     max-width: 1000px;
+    margin-left: 50px;
+
+    @media (max-width: $mobileBig) {
+      margin-left: unset;
+    }
     & span {
       color: $secondaryOneColor;
     }

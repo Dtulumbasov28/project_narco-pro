@@ -1,5 +1,7 @@
 .contacts {
-  background: #f0f2f4;
+  @media (max-width: $tablet) {
+    background: #f0f2f4;
+  }
   // .contacts__container
 
   &__container {

@@ -350,6 +350,13 @@ input[type="submit"] {
   }
 }
 .article .main-form {
-  border-radius: $borderRadius;
-  padding: 10px;
+  width: fit-content;
+
+  @media (max-width: $netbok) {
+    padding: 20px;
+    border-radius: $borderRadius;
+  }
+  @media (max-width: $tablet) {
+    width: unset;
+  }
 }

@@ -25,6 +25,7 @@
 
   &__iframe {
     width: 100%;
+    height: fit-content;
     max-width: 780px;
     border-radius: 150px 5px 5px 5px;
     overflow: hidden;
@@ -151,6 +152,8 @@
       position: unset;
       border-radius: $borderRadius;
       margin: 0 auto;
+      max-width: 780px;
+      max-height: 400px;
       grid-area: 3 / 1 / 4 / 2;
     }
   }
