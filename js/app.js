@@ -3917,7 +3917,7 @@
         if (articlePage) {
             var tpl = '<div class="oglav__heading">Содержание</div><ul class="oglav__list">{{contents}}</ul>';
             let contents = "";
-            var elHeaders = document.querySelectorAll(".article-content__text h2, .article-content__text h3");
+            var elHeaders = document.querySelectorAll(".article-content__text h2, .article-content__text h3, .article-content__text h4");
             if (!elHeaders.length) ; else {
                 elHeaders.forEach(((el, index) => {
                     if (!el.id) el.id = `title-${index}`;
