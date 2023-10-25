@@ -152,22 +152,22 @@ class Popup {
 		}.bind(this))
 
 		// Открытие по хешу
-		if (this.options.hashSettings.goHash) {
-			// Проверка изменения адресной строки
-			window.addEventListener('hashchange', function () {
-				if (window.location.hash) {
-					this._openToHash();
-				} else {
-					this.close(this.targetOpen.selector);
-				}
-			}.bind(this))
+		// if (this.options.hashSettings.goHash) {
+		// 	// Проверка изменения адресной строки
+		// 	window.addEventListener('hashchange', function () {
+		// 		if (window.location.hash) {
+		// 			this._openToHash();
+		// 		} else {
+		// 			this.close(this.targetOpen.selector);
+		// 		}
+		// 	}.bind(this))
 
-			window.addEventListener('load', function () {
-				if (window.location.hash) {
-					this._openToHash();
-				}
-			}.bind(this))
-		}
+		// 	window.addEventListener('load', function () {
+		// 		if (window.location.hash) {
+		// 			this._openToHash();
+		// 		}
+		// 	}.bind(this))
+		// }
 	}
 	open(selectorValue) {
 		if (bodyLockStatus) {

@@ -201,6 +201,10 @@
   padding-bottom: 15px;
   border-bottom: 1px solid #e1e2e3;
 
+  @media (max-width: $tablet) {
+    display: none;
+  }
+
   // .breadcrumbs__item
 
   &__item {

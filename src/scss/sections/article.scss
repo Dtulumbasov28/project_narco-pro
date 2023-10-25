@@ -23,14 +23,21 @@
   // .article__body
 
   &__body {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
     margin-top: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
   }
 
   // .article__sidemenu
 
   &__sidemenu {
+    grid-area: 1 / 1 / 2 / 2;
     @media (max-width: $netbok) {
       display: none;
     }
@@ -39,11 +46,19 @@
   // .article__content
 
   &__content {
+    grid-area: 1 / 2 / 2 / 3;
   }
 
   // .article__oglav
 
   &__oglav {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+
+  // .article__bottom
+
+  &__bottom {
+    grid-area: 2 / 2 / 3 / 4;
   }
 }
 .article-content {
@@ -230,16 +245,110 @@
   // .oglav__item
 
   &__item {
-    font-weight: 600;
-    padding: 10px 0;
-
-    @media (max-width: $notebook) {
-      font-size: 14px;
-    }
   }
 
   // .oglav__link
 
   &__link {
+    padding: 10px 0;
+    font-weight: 600;
+    white-space: unset;
+    text-align: left;
+    transition: 0.3s ease;
+
+    @media (max-width: $notebook) {
+      font-size: 14px;
+    }
+
+    @media (hover: hover) and (min-width: $tablet) {
+      &:hover {
+        color: $secondaryOneColor;
+      }
+    }
+  }
+}
+
+.article__bottom {
+  & .recommend__container {
+    padding: unset;
+    margin: unset;
+  }
+}
+.recommend {
+  // .recommend__container
+
+  &__container {
+  }
+
+  // .recommend__title
+
+  &__title {
+  }
+
+  // .recommend__body
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: -10px;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobileBig) {
+      grid-template-columns: repeat(1, auto);
+    }
+  }
+
+  // .recommend__item
+
+  &__item {
+    position: relative;
+    margin: 10px;
+  }
+
+  // .recommend__img
+
+  &__img {
+    height: 200px;
+    border-radius: $borderRadius;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  // .recommend__date
+
+  &__date {
+    color: $secondaryThreeColor;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  // .recommend__heading
+
+  &__heading {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+
+    @media (max-width: $mobile) {
+      font-size: 14px;
+    }
+
+    @media (hover: hover) and (min-width: $tablet) {
+      &:hover {
+        color: $secondaryTwoColor;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
