@@ -41,17 +41,17 @@
   &__slide {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;  
     height: 100%;
+    height: 100%;
+    max-height: 310px;
+    border-radius: $borderRadius;
+    overflow: hidden;
   }
 
   // .conditions__slide-img
 
   &__slide-img {
-    height: 100%;
-    max-height: 310px;
-    border-radius: $borderRadius;
-    overflow: hidden;
-    margin-bottom: 10px;
   }
 
   // .conditions__slide-desc
@@ -60,6 +60,7 @@
     font-size: 14px;
     line-height: 1.5;
     color: $secondaryThreeColor;
+    margin-top: 10px;
   }
 
   // .conditions__text
