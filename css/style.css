@@ -861,10 +861,6 @@ input[type=submit] {
   font-size: 40px;
   line-height: 1.2;
   text-transform: uppercase;
-  background: var(--btn-bg, linear-gradient(255deg, #cc675b 27.22%, #cc675b 27.22%, #2c6890 76.12%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .header-burger__address {
@@ -1105,10 +1101,6 @@ input[type=submit] {
   font-size: 40px;
   line-height: 1.2;
   text-transform: uppercase;
-  background: linear-gradient(255deg, #cc675b 27.22%, #cc675b 27.22%, #2c6890 76.12%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   display: inline-block;
   margin-bottom: 10px;
 }
@@ -2395,10 +2387,6 @@ input[type=submit] {
   font-size: 40px;
   line-height: 1.2;
   text-transform: uppercase;
-  background: var(--btn-bg, linear-gradient(255deg, #cc675b 27.22%, #cc675b 27.22%, #2c6890 76.12%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   display: inline-block;
   margin-bottom: 10px;
 }
@@ -2752,10 +2740,6 @@ input[type=submit] {
   font-size: 90px;
   line-height: 1;
   text-transform: uppercase;
-  background: linear-gradient(255deg, #cc675b 27.22%, #cc675b 27.22%, #2c6890 76.12%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   margin-bottom: 15px;
 }
 
@@ -5716,6 +5700,10 @@ input[type=submit] {
   .complex-approach__grid {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .photo__title {
+    margin-left: unset;
   }
 
   .map__iframe {

@@ -3929,20 +3929,34 @@
         }
     }
     generatorOglav();
-    function formValue() {
-        let openModalBtn = document.getElementsByClassName("price-item__order");
-        let setAttrInput = document.querySelector("input[type=hidden]");
-        for (let i = 0; i < openModalBtn.length; i++) openModalBtn[i].addEventListener("click", (function() {
-            let val = openModalBtn[i].value;
-            openModalWindow(val);
-        }));
-        function openModalWindow(val) {
-            if (openModalBtn.value === "") setAttrInput.setAttribute("value", "");
-            setAttrInput.value = val;
-            console.log(setAttrInput);
+    function universalForm() {
+        var form = document.querySelector("#popup-universal");
+        if (!form) {
+            console.log("Не найдена универсальная форма");
+            return false;
         }
+        var interested = form.querySelector(".popup__input-title");
+        var srcUrl = form.querySelector(".popup__input-url");
+        document.body.addEventListener("click", (function(e) {
+            var btn = e.target.closest(".button__modal");
+            if (btn) {
+                if (interested) interested.value = "";
+                if (srcUrl) srcUrl.value = window.location.href;
+            }
+        }));
+        document.body.addEventListener("click", (function(e) {
+            var positions_btn = e.target.closest(".button__modal");
+            if (positions_btn) {
+                var target_pension = positions_btn.closest(".price-item, .main-card, .service-slider__item, .service-pinned__item, .promotions__slide") || "";
+                if (target_pension) {
+                    target_pension = target_pension.querySelector(".price-item__name, .main-card__heading, .service-slider__heading, .service-pinned__heading, .promotions__slide-heading");
+                    if (target_pension) target_pension = target_pension.textContent;
+                }
+                if (interested) if (target_pension) interested.value = target_pension; else interested.value = "";
+            }
+        }));
     }
-    formValue();
+    universalForm();
     window["FLS"] = true;
     isWebp();
     menuInit();
