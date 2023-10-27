@@ -6,11 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231027155506">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231027171521">
 	<link rel="shortcut icon" href="favicon.svg">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js?_v=20231027155506"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js?_v=20231027171521"></script>
 </head>
 
 <body>
@@ -916,11 +916,7 @@
 					</div>
 					<div class="video__body">
 						<div class="video__video">
-							<!-- <iframe width="560" height="315"
-					src="https://www.youtube.com/embed/NJuSStkIZBg?si=A8vwy_GvWT2HpYl3&amp;controls=0"
-					title="YouTube video player" frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					allowfullscreen></iframe> -->
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/NJuSStkIZBg?si=A8vwy_GvWT2HpYl3&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 						</div>
 						<div class="video__text">
 							<div class="video__desc">
@@ -2232,26 +2228,20 @@
 							<button class="swiper__button swiper__button-next conditions__slider-next"></button>
 						</div>
 						<div class="conditions__slider swiper">
-							<ul class="conditions__slider-wrapper swiper-wrapper">
-								<li class="conditions__slide swiper-slide">
-									<div class="conditions__slide-img">
-										<img src="img/conditions/conditions-1.jpg" alt="Палата 2-х местная" class="cover">
-									</div>
-									<div class="conditions__slide-desc">Палата 2-х местная</div>
-								</li>
-								<li class="conditions__slide swiper-slide">
-									<div class="conditions__slide-img">
-										<img src="img/conditions/conditions-2.jpg" alt="Первичный осмотр пациентов по скорой" class="cover">
-									</div>
-									<div class="conditions__slide-desc">Первичный осмотр пациентов по скорой</div>
-								</li>
-								<li class="conditions__slide swiper-slide">
-									<div class="conditions__slide-img">
-										<img src="img/conditions/conditions-3.jpg" alt="Прием пациента" class="cover">
-									</div>
-									<div class="conditions__slide-desc">Прием пациента</div>
-								</li>
-							</ul>
+							<div data-gallery class="conditions__slider-wrapper swiper-wrapper">
+								<a href="img/conditions/conditions-1.jpg" class="conditions__slide swiper-slide">
+									<img src="img/conditions/conditions-1.jpg" alt="Палата 2-х местная" class="cover">
+									<span class="conditions__slide-desc">Палата 2-х местная</span>
+								</a>
+								<a href="img/conditions/conditions-2.jpg" class="conditions__slide swiper-slide">
+									<img src="img/conditions/conditions-2.jpg" alt="Первичный осмотр пациентов по скорой" class="cover">
+									<span class="conditions__slide-desc">Первичный осмотр пациентов по скорой
+								</a>
+								<a href="img/conditions/conditions-3.jpg" class="conditions__slide swiper-slide">
+									<img src="img/conditions/conditions-3.jpg" alt="Прием пациента" class="cover">
+									<span class="conditions__slide-desc">Прием пациента</span>
+								</a>
+							</div>
 						</div>
 					</div>
 					<div class="conditions__text">
@@ -2667,7 +2657,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20231027155506"></script>
+	<script src="js/app.min.js?_v=20231027171521"></script>
 </body>
 
 </html>
