@@ -3,7 +3,6 @@ import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
-
 // Скрыть часть текста на страницах
 function resizeScrenText() {
   document.querySelectorAll(".content__container").forEach(function (el) {
@@ -26,7 +25,9 @@ function generatorOglav() {
     var tpl =
       '<div class="oglav__heading">Содержание</div><ul class="oglav__list">{{contents}}</ul>';
     let contents = "";
-    var elHeaders = document.querySelectorAll(".article-content__text h2, .article-content__text h3, .article-content__text h4");
+    var elHeaders = document.querySelectorAll(
+      ".article-content__text h2, .article-content__text h3, .article-content__text h4"
+    );
     if (!elHeaders.length) {
     } else {
       elHeaders.forEach((el, index) => {
@@ -48,25 +49,47 @@ function generatorOglav() {
 generatorOglav();
 
 // Проброс значения value с кнопки в форму
-function formValue() {
-  let openModalBtn = document.getElementsByClassName("price-item__order");
-
-  let setAttrInput = document.querySelector("input[type=hidden]");
-
-  for (let i = 0; i < openModalBtn.length; i++) {
-    openModalBtn[i].addEventListener("click", function () {
-      let val = openModalBtn[i].value; // Получаем value нажатой кнопки
-      openModalWindow(val); // Передаём её в функцию
-    });
+function universalForm() {
+  // проверяем наличие формы
+  var form = document.querySelector("#popup-universal");
+  if (!form) {
+    console.log("Не найдена универсальная форма");
+    return false;
   }
 
-  function openModalWindow(val) {
-    // В функции значение из нажатой кнопки
-    if (openModalBtn.value === "") {
-      setAttrInput.setAttribute("value", "");
+  var interested = form.querySelector(".popup__input-title");
+  var srcUrl = form.querySelector(".popup__input-url");
+
+  // сброс до дефолтных
+  document.body.addEventListener("click", function (e) {
+    var btn = e.target.closest(".button__modal");
+    if (btn) {
+      if (interested) interested.value = "";
+      if (srcUrl) srcUrl.value = window.location.href;
     }
-    setAttrInput.value = val; // Добавляем это значение
-    console.log(setAttrInput);
-  }
+  });
+
+  // Наличие мест в пансионате
+  document.body.addEventListener("click", function (e) {
+    var positions_btn = e.target.closest(".button__modal");
+
+    if (positions_btn) {
+      var target_pension = positions_btn.closest(".price-item, .main-card, .service-slider__item, .service-pinned__item, .promotions__slide") || "";
+      if (target_pension) {
+        target_pension = target_pension.querySelector(".price-item__name, .main-card__heading, .service-slider__heading, .service-pinned__heading, .promotions__slide-heading");
+        if (target_pension) {
+          target_pension = target_pension.textContent;
+        }
+      }
+
+      if (interested) {
+        if (target_pension) {
+          interested.value = target_pension;
+        } else {
+          interested.value = "";
+        }
+      }
+    }
+  });
 }
-formValue();
+universalForm();
